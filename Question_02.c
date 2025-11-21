@@ -1,27 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int num1, num2;
-    int sum, difference, product;
-    float quotient;
+    int a,b,c;
 
     printf("Enter first number: ");
-    scanf("%d", &num1);
+    scanf("%d", &a);
 
     printf("Enter second number: ");
-    scanf("%d", &num2);
+    scanf("%d", &b);
 
-    // Perform operations
-    sum = num1 + num2;
-    difference = num1 - num2;
-    product = num1 * num2;
-
-    if (num2 != 0) {
-        quotient = (float)num1 / num2; 
-        printf("Quotient = %.2f\n", quotient);
-    } else {
-        printf("Quotient = Undefined (division by zero not allowed)\n");
-    }
+   int  sum = a+b;
+   int difference = a-b;
+    int product =a*b;
 
     printf("Sum = %d\n", sum);
     printf("Difference = %d\n", difference);
