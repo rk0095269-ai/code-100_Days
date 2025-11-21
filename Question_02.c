@@ -11,7 +11,7 @@ int main() {
 
    int  sum = a+b;
    int difference = a-b;
-    int product =a*b;
+   int product =a*b;
 
     printf("Sum = %d\n", sum);
     printf("Difference = %d\n", difference);
