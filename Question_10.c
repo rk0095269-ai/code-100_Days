@@ -1,19 +1,17 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int totalSeconds;
-    int hours, minutes, seconds;
-
-   
-    printf("Enter time in seconds: ");
-    scanf("%d", &totalSeconds);
-
-   
-    hours = totalSeconds / 3600;
-    minutes = (totalSeconds % 3600) / 60;
-    seconds = totalSeconds % 60;
-
-    printf("Time in HH:MM:SS format = %02d:%02d:%02d\n", hours, minutes, seconds);
-
+    int sec;
+    int h, m, s;
+    
+    printf("Enter seconds: ");
+    scanf("%d", &sec);
+    
+    h = sec / 3600;
+    m = (sec % 3600) / 60;
+    s = sec % 60;
+    
+    printf("Time is: %d:%d:%d\n", h, m, s);
+    
     return 0;
 }
