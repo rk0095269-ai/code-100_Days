@@ -1,16 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
     int n, sum = 0;
-
-    printf("Enter a positive integer n: ");
+    int i = 1;
+    int count = 0;
+    
+    printf("Enter n: ");
     scanf("%d", &n);
     
-    for(int i = 1; i <= 2*n; i += 2) {
-        sum += i;
+    while(count < n) {
+        if(i % 2 != 0) {
+            sum = sum + i;
+            count = count + 1;
+        }
+        i = i + 1;
     }
-
-    printf("Sum of the first %d odd numbers = %d\n", n, sum);
-
+    
+    printf("Sum = %d\n", sum);
+    
     return 0;
 }
