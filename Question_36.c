@@ -1,21 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int a, b, min, hcf;
-
+    int a, b, i, g;
+    
     printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
-    min = (a < b) ? a : b;
-
-    for (int i = min; i >= 1; i--) {
-        if (a % i == 0 && b % i == 0) {
-            hcf = i; 
-            break;
+    scanf("%d%d", &a, &b);
+    
+    for(i = 1; i <= a; i++) {
+        if(i <= b) {
+            if(a % i == 0) {
+                if(b % i == 0) {
+                    g = i;
+                }
+            }
         }
     }
-
-    printf("HCF (GCD) of %d and %d is %d\n", a, b, hcf);
-
+    
+    printf("GCD is %d\n", g);
+    
     return 0;
 }
