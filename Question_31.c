@@ -1,32 +1,25 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int n;
+    int num, i = 0;
+    int arr[32];
     
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
+    printf("Enter number: ");
+    scanf("%d", &num);
     
-    if (n == 0) {
-        printf("Binary: 0\n");
-        return 0;
-    }
-
-    int binary[32]; 
-    int i = 0;
-
    
-    while (n > 0) {
-        binary[i] = n % 2;
-        n = n / 2;
-        i++;
+    while(num > 0) {
+        arr[i] = num % 2;
+        num = num / 2;
+        i = i + 1;
     }
-
+    
     printf("Binary: ");
-    for (int j = i - 1; j >= 0; j--) {
-        printf("%d", binary[j]);
+    
+   
+    for(int k = i-1; k >= 0; k--) {
+        printf("%d", arr[k]);
     }
-    printf("\n");
-
+    
     return 0;
 }
