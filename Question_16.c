@@ -1,25 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int num1, num2, num3, largest;
-
+    int a,b,c;
     
     printf("Enter three numbers: ");
-    scanf("%d %d %d", &num1, &num2, &num3);
-
-   
-    if (num1 >= num2 && num1 >= num3) {
-        largest = num1;
+    scanf("%d%d%d", &a,&b,&c);
+    
+    if(a > b) {
+        if(a > c) {
+            printf("%d is largest\n", a);
+        } else {
+            printf("%d is largest\n", c);
+        }
+    } else {
+        if(b > c) {
+            printf("%d is largest\n", b);
+        } else {
+            printf("%d is largest\n", c);
+        }
     }
-    else if (num2 >= num1 && num2 >= num3) {
-        largest = num2;
-    }
-    else {
-        largest = num3;
-    }
-
-
-    printf("The largest number is: %d\n", largest);
-
+    
     return 0;
 }
