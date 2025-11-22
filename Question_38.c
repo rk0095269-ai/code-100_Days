@@ -1,22 +1,18 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int n, sum = 0, digit;
-
-   
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
-    int temp = n; 
-
+    int num, sum = 0, digit;
     
-    while (temp != 0) {
-        digit = temp % 10; 
-        sum += digit;      
-        temp /= 10;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    
+    while(num > 0) {
+        digit = num % 10;
+        sum = sum + digit;
+        num = num / 10;
     }
-
-    printf("Sum of digits of %d is %d\n", n, sum);
-
+    
+    printf("Sum of digits = %d\n", sum);
+    
     return 0;
 }
