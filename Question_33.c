@@ -1,39 +1,21 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int n, original, remainder, digits = 0, sum = 0;
-
-    printf("Enter a number: ");
+    int n, a, b, c, sum;
+    
+    printf("Enter 3 digit number: ");
     scanf("%d", &n);
-
-    original = n;
-
-    int temp = n;
-    while (temp != 0) {
-        digits++;
-        temp /= 10;
-    }
-
-    temp = n;
-    while (temp != 0) {
-        remainder = temp % 10;
-
-       
-        int power = 1;
-        for (int i = 0; i < digits; i++) {
-            power *= remainder;
-        }
-
-        sum += power;
-        temp /= 10;
-    }
-
-   
-    if (sum == original) {
-        printf("%d is an Armstrong number.\n", original);
-    } else {
-        printf("%d is not an Armstrong number.\n", original);
-    }
-
+    
+    a = n / 100;
+    b = (n % 100) / 10;
+    c = n % 10;
+    
+    sum = (a*a*a) + (b*b*b) + (c*c*c);
+    
+    if(n == sum)
+        printf("Armstrong number\n");
+    else
+        printf("Not Armstrong\n");
+    
     return 0;
 }
