@@ -1,23 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int a, b, max, lcm;
-
+    int n1, n2, lcm;
+    
     printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
-    max = (a > b) ? a : b;
-    lcm = max;
-
-   
-    while (1) {
-        if (lcm % a == 0 && lcm % b == 0) {
-            break; 
+    scanf("%d%d", &n1, &n2);
+    
+    lcm = n1;
+    if(n2 > n1)
+        lcm = n2;
+    
+    while(1) {
+        if(lcm % n1 == 0) {
+            if(lcm % n2 == 0) {
+                break;
+            }
         }
-        lcm++; 
+        lcm++;
     }
-
-    printf("LCM of %d and %d is %d\n", a, b, lcm);
-
+    
+    printf("LCM is %d\n", lcm);
     return 0;
 }
