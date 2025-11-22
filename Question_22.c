@@ -1,6 +1,7 @@
 #include<stdio.h>
+
 int main() {
-    float cp, sp, p, l, per;
+    float cp, sp, profit, loss;
     
     printf("Enter cost price: ");
     scanf("%f", &cp);
@@ -9,19 +10,16 @@ int main() {
     scanf("%f", &sp);
     
     if(sp > cp) {
-        p = sp - cp;
-        per = (p/cp)*100;
-        printf("Profit = %.2f\n", p);
-        printf("Profit percentage = %.2f\n", per);
+        profit = sp - cp;
+        printf("Profit = %f\n", profit);
     }
     else if(cp > sp) {
-        l = cp - sp;
-        per = (l/cp)*100;
-        printf("Loss = %.2f\n", l);
-        printf("Loss percentage = %.2f\n", per);
+        loss = cp - sp;
+        printf("Loss = %f\n", loss);
     }
     else {
         printf("No profit no loss\n");
     }
-    return 0; 
+    
+    return 0;
 }
