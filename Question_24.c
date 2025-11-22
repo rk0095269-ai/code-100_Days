@@ -1,26 +1,26 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int units;
-    float bill = 0;
-
-    printf("Enter the number of units consumed: ");
-    scanf("%d", &units);
-
-   
-    if (units <= 100) {
-        bill = units * 5; 
-    } 
-    else if (units <= 200) {
-        bill = 100 * 5 + (units - 100) * 7; 
-    } 
-    else if (units <= 300) {
-        bill = 100 * 5 + 100 * 7 + (units - 200) * 10; 
-    } 
-    else {
-        bill = 100 * 5 + 100 * 7 + 100 * 10 + (units - 300) * 12; 
+    int u;
+    float b;
+    
+    printf("Enter units: ");
+    scanf("%d", &u);
+    
+    if(u <= 100) {
+        b = u * 5;
     }
-
-    printf("Bill: ₹%.0f\n", bill);  
+    else if(u <= 200) {
+        b = 500 + (u-100)*7;
+    }
+    else if(u <= 300) {
+        b = 500 + 700 + (u-200)*10;
+    }
+    else {
+        b = 500 + 700 + 1000 + (u-300)*12;
+    }
+    
+    printf("Bill = %.2f\n", b);
+    
     return 0;
 }
