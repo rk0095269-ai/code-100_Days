@@ -1,17 +1,19 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    int n;
-    unsigned long long product = 1; 
+    int n, i;
+    int prod = 1;
     
-    printf("Enter a positive integer n: ");
+    printf("Enter n: ");
     scanf("%d", &n);
     
-    for(int i = 2; i <= n; i += 2) {
-        product *= i;
+    for(i = 1; i <= n; i++) {
+        if(i % 2 == 0) {
+            prod = prod * i;
+        }
     }
-
-    printf("Product of even numbers from 1 to %d = %llu\n", n, product);
-
+    
+    printf("Product of even numbers = %d\n", prod);
+    
     return 0;
 }
