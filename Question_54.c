@@ -1,32 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int n = 4; 
-    int i, j;
+    int i, j, space, stars;
 
-    for (i = 1; i <= n; i++) {
-       
-        for (j = 1; j <= n - i; j++) {
+    for(i = 1; i <= 4; i++) {
+        for(space = 1; space <= 4 - i; space++) {
             printf(" ");
         }
-       
-        for (j = 1; j <= 2*i - 1; j++) {
+        for(stars = 1; stars <= 2*i - 1; stars++) {
             printf("*");
         }
         printf("\n");
     }
-
-    for (i = n-1; i >= 1; i--) {
-       
-        for (j = 1; j <= n - i; j++) {
+    for(i = 3; i >= 1; i--) {
+        for(space = 1; space <= 4 - i; space++) {
             printf(" ");
         }
-      
-        for (j = 1; j <= 2*i - 1; j++) {
+        for(stars = 1; stars <= 2*i - 1; stars++) {
             printf("*");
         }
         printf("\n");
     }
-
+    
     return 0;
 }
