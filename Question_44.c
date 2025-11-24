@@ -1,18 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int n;
-    double sum = 0.0;
-    printf("Enter number of terms (n): ");
+void main() {  
+    int n, i;
+    float s = 0.0;
+    
+    printf("Enter n value: ");
     scanf("%d", &n);
-
-    for (int i = 1; i <= n; i++) {
-        int numerator = 2 * i - 1;   // 1, 3, 5, 7, ...
-        int denominator = 2 * i;     // 2, 4, 6, 8, ...
-        sum += (double) numerator / denominator;
+    
+    for(i = 1; i <= n; i++) {
+        int a, b;
+        a = 2*i - 1;
+        b = 2*i;
+        
+        s = s + (float)a / b;  
     }
     
-    printf("Sum of the series up to %d terms = %.4lf\n", n, sum);
-
-    return 0;
+    printf("Series sum = %.3f\n", s);
+    
+    
+    printf("Press enter to exit...");
+    getchar();
+    getchar();
 }
