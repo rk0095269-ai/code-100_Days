@@ -1,24 +1,28 @@
 #include<stdio.h>
 
-void main() {  
+void main() {
     int n, i;
     float s = 0.0;
+    int num, denom;
     
-    printf("Enter n value: ");
+    printf("Enter n: ");
     scanf("%d", &n);
     
+    denom = 3;  
+    
+
     for(i = 1; i <= n; i++) {
-        int a, b;
-        a = 2*i - 1;
-        b = 2*i;
+        num = 2 * i;
         
-        s = s + (float)a / b;  
+        s = s + (float)num / denom;
+        
+        denom += 4;  
     }
     
-    printf("Series sum = %.3f\n", s);
+
+    printf("Sum = %.4f\n", s);
     
-    
-    printf("Press enter to exit...");
-    getchar();
+    printf("Done! Press enter...");
+    fflush(stdin);
     getchar();
 }
