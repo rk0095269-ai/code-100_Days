@@ -1,16 +1,32 @@
 #include <stdio.h>
 
 int main() {
-    int groups[] = {1, 5, 3, 1}; 
+    int rows, i, j, space;
     
-    int numGroups = sizeof(groups) / sizeof(groups[0]);
+        printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    
+    printf("\nPattern:\n\n");
 
-    for (int i = 0; i < numGroups; i++) {
-        for (int j = 0; j < groups[i]; j++) {
-            printf("*\n");
+    for(i = 1; i <= rows; i++) {
+
+        for(space = 1; space <= rows - i; space++) {
+            printf("  ");
         }
-        printf("\n"); 
+        
+        for(j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        
+        for(j = i - 1; j >= 1; j--) {
+            printf("%d ", j);
+        }
+        
+        printf("\n");
     }
-
+    printf("\nPattern printed successfully!\n");
+    printf("Press Enter to exit...");
+    getchar(); 
+    getchar(); 
     return 0;
-}
+} 
