@@ -1,28 +1,31 @@
-#include <stdio.h>
-int factorial(int n) {
-    int fact = 1;
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    return fact;
-}
+#include<stdio.h>
 
 int main() {
-    int num, temp, sum = 0, digit;
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    int n, orig, d, s = 0, f, i;  
+    
+    printf("Enter number : ");  
+    scanf("%d", &n);
+    
+    orig = n;
 
-    temp = num;
-
-    while (temp > 0) {
-        digit = temp % 10;
-        sum += factorial(digit);
-        temp /= 10;
+    while(n > 0) {
+        d = n % 10;
+        f = 1;
+        i = 1;
+        while(i <= d) {  
+            f = f * i;
+            i++;
+        }
+        
+        s = s + f;
+        n = n / 10;
     }
-    if (sum == num)
-        printf("%d is a Strong Number.\n", num);
+    
+    if(s == orig)
+        printf("%d is STRONG\n", orig);  
     else
-        printf("%d is NOT a Strong Number.\n", num);
-
+        printf("%d NOT strong\n", orig);
+        
+    getchar();  
     return 0;
 }
