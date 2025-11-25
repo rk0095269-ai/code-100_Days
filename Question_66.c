@@ -1,29 +1,36 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int arr[100] = {2, 4, 6, 8, 10};
-    int n = 5;
-    int x, i, pos;
+int main()
+{
+    int a[15] = {3,8,12,17,25,30,42,56,71};
+    int size=9;
+    int x=20;
+    int i,j;
     
-    printf("Array: ");
-    for (i = 0; i < n; i++) printf("%d ", arr[i]);       // Insert an element in a sorted array at the appropriate position.
-
+    printf("Original: ");
+    for(i=0;i<size;i++)
+        printf("%d ",a[i]);
     
-    printf("\nEnter number to insert: ");
-    scanf("%d", &x);
-    
-    for (pos = 0; pos < n; pos++) {
-        if (arr[pos] > x) break;
+    //find where to put
+    for(i=0;i<size;i++)
+    {
+        if(a[i] > x)
+            break;
     }
     
-    for (i = n; i > pos; i--) {
-        arr[i] = arr[i-1];
+    //move everything right
+    for(j=size;j>i;j--)
+    {
+        a[j] = a[j-1];
     }
-    arr[pos] = x;
-    n++;
     
-    printf("New array: ");
-    for (i = 0; i < n; i++) printf("%d ", arr[i]);
+    //put new element
+    a[i] = x;
+    size++;
+    
+    printf("\nAfter: ");
+    for(i=0;i<size;i++)
+        printf("%d ",a[i]);
     
     return 0;
 }
