@@ -1,23 +1,34 @@
-#include <stdio.h>
-
-int main() {
-    int arr[] = {10, 5, 20, 15, 25, 30};
-    int n = 6;
-    int i, j, temp;
+#include<stdio.h>
+int main()
+{
+    int a[]={12,35,8,42,19,56,23};
+    int n=7;
+    int max1,max2,i;
     
-    printf("Array: ");
-    for (i = 0; i < n; i++) printf("%d ", arr[i]);
+    if(a[0]>a[1])
+    {
+        max1=a[0];
+        max2=a[1];
+    }
+    else
+    {
+        max1=a[1];
+        max2=a[0];
+    }
     
-    for (i = 0; i < 2; i++) {
-        for (j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+    for(i=2;i<n;i++)
+    {
+        if(a[i]>max1)
+        {
+            max2=max1;
+            max1=a[i];
+        }
+        else if(a[i]>max2 && a[i]!=max1)
+        {
+            max2=a[i];
         }
     }
     
-    printf("\nSecond largest: %d\n", arr[n - 2]);
+    printf("Second largest: %d",max2);
     return 0;
 }
