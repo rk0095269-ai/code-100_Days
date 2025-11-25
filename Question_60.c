@@ -1,30 +1,31 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int n;
-    int positiveCount = 0, negativeCount = 0, zeroCount = 0;
-
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-
-    int arr[n];
-
-    printf("Enter %d elements:\n", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    for (int i = 0; i < n; i++) {
-        if (arr[i] > 0)
-            positiveCount++;
-        else if (arr[i] < 0)
-            negativeCount++;
+int main()
+{
+    int arr[] = {4, -2, 0, 8, -5, 0, 3, -1, 7, 0};
+    int n = 10;
+    int pos = 0, neg = 0, zero = 0;
+    int i;
+    
+    for(i=0; i<n; i++)
+    {
+        if(arr[i] > 0)
+        {
+            pos++;
+        }
+        else if(arr[i] < 0)
+        {
+            neg++;
+        }
         else
-            zeroCount++;
+        {
+            zero++;
+        }
     }
-    printf("Number of positive elements = %d\n", positiveCount);
-    printf("Number of negative elements = %d\n", negativeCount);
-    printf("Number of zero elements = %d\n", zeroCount);
-
+    
+    printf("Positive numbers: %d\n", pos);
+    printf("Negative numbers: %d\n", neg);
+    printf("Zero numbers: %d\n", zero);
+    
     return 0;
 }
