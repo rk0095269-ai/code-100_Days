@@ -1,22 +1,33 @@
-  
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int arr[] = {10, 25, 8, 14, 3, 19};
-    int n = 6;
-    int target;
+int main()
+{
+    int arr[] = {23, 45, 12, 67, 89, 34, 56};
+    int n = 7;
+    int search, i, found = 0;
+    int position;
     
-    printf("Enter number to search: ");      // Search for an element in an array using linear search.
- 
-    scanf("%d", &target);
+    printf("Enter element to search: ");
+    scanf("%d", &search);
     
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == target) {
-            printf("Found at index %d\n", i);
-            return 0; 
+    for(i=0; i<n; i++)
+    {
+        if(arr[i] == search)
+        {
+            found = 1;
+            position = i;
+            break;
         }
     }
     
-    printf("Not found\n");
+    if(found == 1)
+    {
+        printf("Element %d found at position %d\n", search, position);
+    }
+    else
+    {
+        printf("Element %d not found in array\n", search);
+    }
+    
     return 0;
 }
