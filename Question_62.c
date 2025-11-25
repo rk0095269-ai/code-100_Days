@@ -1,19 +1,27 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = 5;
+int main()
+{
+    int a[] = {1,2,3,4,5,6,7};
+    int n = 7;
+    int i,temp;
     
-    for (int i = 0, j = n - 1; i < j; i++, j--) {                   
-        int temp = arr[i];                          //Reverse an array without taking extra space.
-
-        arr[i] = arr[j];
-        arr[j] = temp;
+    printf("Original array: ");
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+    printf("\n");
+    
+    // reverse logic
+    for(i=0;i<n/2;i++)
+    {
+        temp = a[i];
+        a[i] = a[n-1-i];
+        a[n-1-i] = temp;
     }
     
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
+    printf("Reversed array: ");
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
     
     return 0;
 }
